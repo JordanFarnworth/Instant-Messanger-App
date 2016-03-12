@@ -1,0 +1,11 @@
+/* CSS declarations go here */
+#input-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 120px;
+  width: 1000px;
+}
+ #table-div{
+   max-height: 600px;
+   overflow-y: auto;
+ }

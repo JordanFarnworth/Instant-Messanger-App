@@ -1,0 +1,70 @@
+<head>
+  <title>jordan-chat</title>
+</head>
+
+<body>
+<div class="container">
+  {{> loginButtons}}
+  <div class="text-center">
+    <h1>chat app</h1>
+  </div>
+  {{> messagesContainer}}
+  {{> inputBar}}
+</div>
+</body>
+
+<template name="messagesContainer">
+  <div id="table-div">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>
+            Username
+          </th>
+          <th>
+            Message
+          </th>
+          <th>
+            Created At
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each messages}}
+          {{> messagess}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="messagess">
+  <tr>
+    <td>
+      <p>
+        <strong>{{username}}</strong>
+      </p>
+    </td>
+    <td>
+      <p>
+        {{text}}
+      </p>
+    </td>
+    <td>
+      <p>
+        {{createdAt}}
+      </p>
+    </td>
+  </tr>
+</template>
+
+
+<template name="inputBar">
+  {{#if currentUser}}
+  <form class="input-message">
+    <input type="text" name="text" id="input-bar" class="form-control" placeholder="type chat message here">
+  </form>
+  {{else}}
+  <h1>Log in bitch</h1>
+  {{/if}}
+</template>
